@@ -1,0 +1,180 @@
+.table {
+	width: 100%;
+	border: 1px solid var(--lightgray);
+	border-radius: 10px;
+}
+
+/* Columns */
+.table__columns {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	line-height: 40px;
+	border-bottom: 1px solid var(--lightgray);
+	font-weight: 600;
+	cursor: default;
+}
+
+.table__columns > div {
+	margin: auto 0 auto 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.table__columns > div > svg {
+	min-width: 20px;
+	max-width: 20px;
+	min-height: 20px;
+	max-height: 20px;
+	margin: auto 0;
+	margin-left: 5px;
+	-webkit-transition: 0.275s;
+	-o-transition: 0.275s;
+	transition: 0.275s;
+}
+
+.table__columns__sort_column {
+	cursor: pointer;
+}
+
+.table__columns__sort_column__ascending {
+	-webkit-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+.table__columns__sort_column__descending {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.table__columns div:nth-child(1),
+.table__row div:nth-child(1) {
+	width: 5%;
+}
+
+.table__columns div:nth-child(2),
+.table__row div:nth-child(2) {
+	width: 55%;
+}
+
+.table__columns div:nth-child(3),
+.table__row div:nth-child(3) {
+	width: 40%;
+}
+
+@media screen and (max-width: 600px) {
+	.table__columns div:nth-child(1),
+	.table__row div:nth-child(1) {
+		width: 15%;
+	}
+
+	.table__columns div:nth-child(2),
+	.table__row div:nth-child(2) {
+		width: 45%;
+	}
+}
+
+/* Row */
+.table__row {
+	width: 100%;
+	line-height: 40px;
+	height: 40px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border-bottom: 1px solid var(--lightgray);
+	color: black;
+	-webkit-transition: 0.1s;
+	-o-transition: 0.1s;
+	transition: 0.1s;
+}
+
+.table__row:hover {
+	color: grey;
+}
+
+.table__row__gray {
+	background: #f8f8f8;
+}
+
+.table__row__white {
+	background: #ffffff;
+}
+
+/* - Ellipsis styles for all row cells, except for id */
+.table__row div:not(.table__row div:first-child) {
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.table__row div {
+	margin: auto 0 auto 10px;
+}
+
+/* - Id column */
+.table__row div:nth-child(1) span {
+	color: var(--blue-background);
+	font-weight: 500;
+	background: var(--blue-text);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.table > .table__row:last-child {
+	border-radius: 0 0 10px 10px;
+	border-bottom: none;
+}
+
+/* Loader */
+.loader {
+	position: relative;
+	height: 20px;
+	margin: auto 0;
+	border-radius: 5px;
+	-webkit-animation-duration: 1.25s;
+	animation-duration: 1.25s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: placeHolderShimmer;
+	animation-name: placeHolderShimmer;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	background: var(--loader);
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(8%, var(--loader)),
+		color-stop(18%, #f0f0f0),
+		color-stop(33%, var(--loader))
+	);
+	background: -o-linear-gradient(left, var(--loader) 8%, #f0f0f0 18%, var(--loader) 33%);
+	background: linear-gradient(to right, var(--loader) 8%, #f0f0f0 18%, var(--loader) 33%);
+	background-size: 800px 104px;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+	100% {
+		background-position: 468px 0;
+	}
+}
+
+@keyframes placeHolderShimmer {
+	0% {
+		background-position: -468px 0;
+	}
+	100% {
+		background-position: 468px 0;
+	}
+}

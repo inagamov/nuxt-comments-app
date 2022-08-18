@@ -1,42 +1,21 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Comments App.
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+<br/>
 
-## Setup
+Comments table             |  Specific comment
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/69040554/185265090-d207af10-90ed-416c-ba2c-29bcb18f22e5.png)  |  ![image](https://user-images.githubusercontent.com/69040554/185265344-aeb0b438-c196-4e2f-88e8-ee409fcd2539.png)
 
-Make sure to install the dependencies:
+## 📍 Demo.
 
-```bash
-# yarn
-yarn install
+> https://jazzy-cannoli-3052c3.netlify.app/
 
-# npm
-npm install
+<br/>
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+## 📍 Set up for development.
 
-## Development Server
+1. Run `npm install`.
 
-Start the development server on http://localhost:3000
+2. Run `npm run dev`.
 
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+3. Go to `http://localhost:3000` (port may differ)

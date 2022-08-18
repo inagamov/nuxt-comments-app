@@ -27,7 +27,6 @@ export default {
 	data: () => ({
 		comment: [],
 
-		url: "https://jsonplaceholder.typicode.com/comments/",
 		loading: true,
 		error: false,
 	}),
@@ -39,10 +38,12 @@ export default {
 	methods: {
 		fetchComment() {
 			this.loading = true;
-			const route = useRoute();
+
+			const id = useRoute().params.id;
+			const config = useRuntimeConfig();
 
 			axios
-				.get(this.url + route.params.id)
+				.get(config.API_URL + id)
 				.then((response) => {
 					this.loading = false;
 					this.comment = response.data;

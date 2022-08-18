@@ -15,11 +15,8 @@ export default {
 	data: () => ({
 		comments: [],
 
-		url: "https://jsonplaceholder.typicode.com/comments",
 		loading: true,
-
 		total_pages: null,
-		limit: 10,
 		current_page: 1,
 	}),
 
@@ -37,10 +34,13 @@ export default {
 		fetchComments() {
 			this.loading = true;
 
+			// Access .env
+			const config = useRuntimeConfig();
+
 			axios
-				.get(this.url, {
+				.get(config.API_URL, {
 					params: {
-						_limit: this.limit,
+						_limit: config.LIMIT,
 						_page: this.current_page,
 					},
 				})
@@ -49,7 +49,7 @@ export default {
 					this.comments = response.data;
 
 					// Compute total pages amount
-					this.total_pages = Math.ceil(response.headers["x-total-count"] / this.limit);
+					this.total_pages = Math.ceil(response.headers["x-total-count"] / config.LIMIT);
 				})
 				.catch((error) => {
 					console.log(error);
